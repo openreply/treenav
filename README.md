@@ -3,6 +3,11 @@ TreeNav
 
 This library allows you to display hierarchical information from a tree data structure.
 
+===============
+**Screenshots**
+
+![Screenshot](https://raw.githubusercontent.com/dfpalomar/treenav/master/Screenshots/screenshot_1.png)
+
 Download
 --------
 
