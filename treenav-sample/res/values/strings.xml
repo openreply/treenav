@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TreeNavSample</string>
+    
+    <string-array name="continents">
+        <item>America</item>
+        <item>Europe</item>
+    </string-array>
+    
+    
+    <string-array name="america_countries">
+        <item>Colombia</item>
+        <item>Mexico</item>
+        <item>United States</item>
+    </string-array>
+    
+    <string-array name="colombia_cities">
+        <item>Bogota</item>
+        <item>Cartagena</item>
+        <item>Santa Marta</item>
+    </string-array>
+    
+    <string-array name="mexico_cities">
+        <item>Cancún</item>
+        <item>Ciudad de México</item>
+        <item>Monterrey</item>
+    </string-array>     
+
+    <string-array name="united_states_cities">
+        <item>New York</item>
+        <item>San Francisco</item>
+        <item>Washington DC</item>
+    </string-array>
+    
+
+    <string-array name="europe_countries">
+        <item>Italy</item>
+        <item>Spain</item>
+        <item>United Kingdom</item>
+    </string-array>
+    
+    <string-array name="italy_cities">
+        <item>Milan</item>
+        <item>Rome</item>
+        <item>Turin</item>
+    </string-array>
+    
+    <string-array name="spain_cities">
+        <item>Barcelona</item>
+        <item>Madrid</item>
+        <item>Sevilla</item>
+    </string-array>
+    
+    <string-array name="united_kingdom_cities">
+        <item>Cambridge</item>
+        <item>London</item>
+        <item>Oxford</item>
+    </string-array>
+
+</resources>
