@@ -17,7 +17,7 @@ In order to use the library, you will need:
 2. For the your ListView create an instance of the **TreeAdapter**, passing as arguments an instance of a class that extends the **CellListFactory** as well as the dataset you want to use. Tha TreeAdapter instance provides you access to the items in your data set, and the CellListFactory class creates views for items, and replaces the content of some of the views with new data items when the original item is no longer visible. With those classes you do not need to worry about the typicall view holder pattern, just implement certain methods that are invoked when necessary.
 
 
- Usage
+Example
 --------
 The following example uses a ListView as its only layout element. It dynamically creates a tree rerepsentation of information contained in arrays placed in the res folder of the app. To more detailed informaton about the implementation pleae downlaod the sample project.
 
