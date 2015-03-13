@@ -1,29 +1,136 @@
 TreeNav
 ============
 
-This library allows you to display hierarchical information from a tree data structure.
+This library allows you to display hierarchical information (from a tree data structure) in a vertically scrolling list. You also have the flexibility to define custom layout if you require different type of cells.
 
 ===============
 **Screenshots**
 
 ![Screenshot](https://raw.githubusercontent.com/dfpalomar/treenav/master/Screenshots/screenshot_1.png)
 
+Usage
+--------
+In order to use the library, you will need:
+
+1. Using the classes **NAryTree** and **CommandTreeNode** create a tree representation of the information you want to display. 
+
+2. For the your ListView create an instance of the **TreeAdapter**, passing as arguments an instance of a class that extends the **CellListFactory** as well as the dataset you want to use. Tha TreeAdapter instance provides you access to the items in your data set, and the CellListFactory class creates views for items, and replaces the content of some of the views with new data items when the original item is no longer visible. With those classes you do not need to worry about the typicall view holder pattern, just implement certain methods that are invoked when necessary.
+
+
+Example
+--------
+The following example uses a ListView as its only layout element. It dynamically creates a tree rerepsentation of information contained in arrays placed in the res folder of the app. To more detailed informaton about the implementation pleae downlaod the sample project.
+
+```dart
+public class MainActivity extends Activity {
+
+	private ListView mListView;
+	
+	TreeAdapter<String> listAdapter;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		mListView = (ListView) findViewById(R.id.list_view);
+		
+		listAdapter = new TreeAdapter<String>(this, new MenuCellListFactory(), initialiseDataSet(this));
+		mListView.setAdapter(listAdapter);
+		mListView.setOnItemClickListener(listAdapter);
+	}
+	
+	/**
+	 * Creates the initial representation of the data set that will be use for
+	 * the ListView.
+	 */
+	private ArrayList<CommandTreeNode<String>> initialiseDataSet(Context context) {
+
+		NAryTree<String> menuDataSourceTree = getTreeMenu(context);
+
+		ArrayList<CommandTreeNode<String>> listDataSet = new ArrayList<CommandTreeNode<String>>();
+		listDataSet.add((CommandTreeNode<String>) menuDataSourceTree.getRoot());
+
+		for (TreeNode<String> mainMenuItemNode : menuDataSourceTree.getRoot().getChildren()) {
+			listDataSet.add((CommandTreeNode<String>) mainMenuItemNode);
+		}
+		
+		return listDataSet;
+	}
+	
+	public NAryTree<String> getTreeMenu(final Context context) {
+		
+		Resources res = context.getResources();
+
+		String[] continents = res.getStringArray(R.array.continents);
+		
+		CommandTreeNode<String> rootNode = createNode("Continents");
+		
+		for (final String continent : continents) {
+			
+			CommandTreeNode<String> continentNode = createNode(continent);
+			
+			int countriesArrayName = getResources().getIdentifier(formatValue(continent) + "_countries", "array", getPackageName());
+			String[] countryList = res.getStringArray(countriesArrayName);
+			
+			for (final String country : countryList) {
+				
+				CommandTreeNode<String> countryNode = createNode(country);
+				
+				int citiesArrayName = res.getIdentifier(formatValue(country) + "_cities", "array", getPackageName());
+				String[] cityList = res.getStringArray(citiesArrayName);
+				
+				for (final String city : cityList) {
+					CommandTreeNode<String> cityNode = createNode(city);
+					countryNode.addChild(cityNode);
+				}
+				
+				continentNode.addChild(countryNode);
+			}
+			
+			rootNode.addChild(continentNode);
+		}
+		
+		
+		NAryTree<String> tree = new NAryTree<String>(rootNode);
+		
+		return tree;
+	}
+	
+	public CommandTreeNode<String> createNode(final String nodeData) {
+		
+		CommandTreeNode<String> node = new CommandTreeNode<String>(nodeData);
+		node.setCommand(new Command() {
+			@Override
+			public void executeCommand() {
+				Toast.makeText(MainActivity.this, nodeData, Toast.LENGTH_SHORT).show();
+			}
+		});
+		return node;
+	}
+	
+	public String formatValue(String value) {
+		return value.toLowerCase(Locale.getDefault()).replace(" ", "_");
+	}
+	
+	@Override
+	public void onBackPressed() {
+		if (listAdapter.goBackOnNavigationHistory() == false) {
+			super.onBackPressed();	
+		}
+	}
+}
+```
+
 Download
 --------
 
-Download [the latest JAR][1] or grab via Maven:
-```xml
-<dependency>
-  <groupId>eu.reply.androidlab.ui</groupId>
-  <artifactId>treenav</artifactId>
-  <version>1.0.0</version>
-</dependency>
-```
-or Gradle:
-```groovy
-compile 'eu.reply.androidlab.ui:treenav:1.0.0'
-```
+Download [the latest JAR][1].
 
+Links
+--------
+
+- Demo application available on [Google Play](https://play.google.com/store/apps/details?id=be.delhaize)
 
 License
 -------
