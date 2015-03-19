@@ -9,7 +9,7 @@ import eu.reply.androidlab.ui.treenav.utils.CellListFactory;
 
 /**
  * Factory class responsible to provide details about the different view types that have to be shown 
- * in the ListView control.
+ * in the ListView.
  */
 public class MenuCellListFactory extends CellListFactory<String>
 {
