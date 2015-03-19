@@ -150,4 +150,4 @@ License
     limitations under the License.
 
 
-[1]: https://search.maven.org/remote_content?g=eu.reply.androidlab.ui&a=treenav&v=LATEST    
+[1]: https://github.com/dfpalomar/treenav/blob/master/TreeNavLibrary.jar
