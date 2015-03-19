@@ -12,12 +12,11 @@ public class CellViewHolder  extends BaseViewHolder<String> {
 	
 	public CellViewHolder(View view) {
 		super(view);
-		
 		mTextView = (TextView) view;
 	}
 
 	@Override
-	public void displayNodeData(CommandTreeNode<String> node, int treeMaxDepth) {		
+	public void displayNodeData(CommandTreeNode<String> node, int treeMaxDepth) {
 		
 		String cellText     = getText(node, treeMaxDepth);
 		int backgroundColor = getBackgroundColor(node, treeMaxDepth);

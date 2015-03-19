@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
 import eu.reply.androidlab.ui.treenav.adapter.TreeAdapter;
+import eu.reply.androidlab.ui.treenav.sample.R;
 import eu.reply.androidlab.ui.treenav.tree.NAryTree;
 import eu.reply.androidlab.ui.treenav.tree.TreeNode;
 import eu.reply.androidlab.ui.treenav.utils.CommandTreeNode;
@@ -28,22 +29,16 @@ public class MainActivity extends Activity {
 		
 		mListView = (ListView) findViewById(R.id.list_view);
 		
-		listAdapter = new TreeAdapter<String>(this, new MenuCellListFactory(), initialiseMenu(this));
+		listAdapter = new TreeAdapter<String>(this, new MenuCellListFactory(), initialiseDataSet(this));
 		mListView.setAdapter(listAdapter);
 		mListView.setOnItemClickListener(listAdapter);
 	}
 	
-	
 	/**
 	 * Creates the initial representation of the data set that will be use for
-	 * the MainMenuView instances.
-	 * 
-	 * <p>
-	 * The initial collection contains the root of the tree (Home) and its
-	 * children (menu items that make up the application's main menu).
-	 * </p>
+	 * the ListView.
 	 */
-	private ArrayList<CommandTreeNode<String>> initialiseMenu(Context context) {
+	private ArrayList<CommandTreeNode<String>> initialiseDataSet(Context context) {
 
 		NAryTree<String> menuDataSourceTree = getTreeMenu(context);
 
@@ -91,7 +86,6 @@ public class MainActivity extends Activity {
 		}
 		
 		
-		// Create the initial representation of the tree data structure
 		NAryTree<String> tree = new NAryTree<String>(rootNode);
 		
 		return tree;
