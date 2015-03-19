@@ -14,12 +14,12 @@ In order to use the library, you will need:
 
 1. Using the classes **NAryTree** and **CommandTreeNode** create a tree representation of the information you want to display. 
 
-2. For the your ListView create an instance of the **TreeAdapter**, passing as arguments an instance of a class that extends the **CellListFactory** as well as the dataset you want to use. Tha TreeAdapter instance provides you access to the items in your data set, and the CellListFactory class creates views for items, and replaces the content of some of the views with new data items when the original item is no longer visible. With those classes you do not need to worry about the typicall view holder pattern, just implement certain methods that are invoked when necessary.
+2. For the your ListView create an instance of the **TreeAdapter**, passing as arguments an instance of a class that extends the **CellListFactory** as well as the dataset you want to use. The TreeAdapter instance provides you access to the items in your data set, and the CellListFactory class creates views for items, and replaces the content of some of the views with new data items when the original item is no longer visible. With those classes you do not need to worry about the typical view holder pattern, just implement certain methods that are invoked when necessary.
 
 
 Example
 --------
-The following example uses a ListView as its only layout element. It dynamically creates a tree rerepsentation of information contained in arrays placed in the res folder of the app. To more detailed informaton about the implementation pleae downlaod the sample project.
+The following example uses a ListView as its only layout element. It dynamically creates a tree representation of the information contained in arrays placed in the res folder of the app. For further information about the implementation, please download the sample project.
 
 ```dart
 public class MainActivity extends Activity {
@@ -150,4 +150,4 @@ License
     limitations under the License.
 
 
-[1]: https://search.maven.org/remote_content?g=eu.reply.androidlab.ui&a=treenav&v=LATEST    
+[1]: https://github.com/dfpalomar/treenav/blob/master/TreeNavLibrary.jar
