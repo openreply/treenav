@@ -130,7 +130,8 @@ Download [the latest JAR][1].
 Links
 --------
 
-- Demo application available on [Google Play](https://play.google.com/store/apps/details?id=be.delhaize)
+- Delhaize app available on [Google Play](https://play.google.com/store/apps/details?id=be.delhaize)
+- Baltur app available on [Google Play](https://play.google.com/store/apps/details?id=com.reply.baltur)
 
 ![Screenshot](./Screenshots/screenshot_apps.png)
 
