@@ -132,8 +132,7 @@ Links
 
 - Demo application available on [Google Play](https://play.google.com/store/apps/details?id=be.delhaize)
 
-![Screenshot](./Screenshots/delhaize_phone_menu.png) ![Screenshot](./Screenshots/delhaize_tablet_menu.png) ![Screenshot](./Screenshots/delhaize_tablet_menu_categories.png)
-![Screenshot](./Screenshots/baltur_phone_menu.png) ![Screenshot](./Screenshots/baltur_tablet_menu.png)
+![Screenshot](./Screenshots/screenshot_apps.png)
 
 License
 -------
