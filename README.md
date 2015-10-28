@@ -74,7 +74,7 @@ public class MainActivity extends Activity {
 			String[] countryList = res.getStringArray(countriesArrayName);
 			
 			for (final String country : countryList) {
-				
+				file:///Users/franciscogutierrez/Documents/Development/Open%20Reply/TreeNav/Screenshots/delhaize_tablet_menu.png
 				CommandTreeNode<String> countryNode = createNode(country);
 				
 				int citiesArrayName = res.getIdentifier(formatValue(country) + "_cities", "array", getPackageName());
@@ -132,11 +132,8 @@ Links
 
 - Demo application available on [Google Play](https://play.google.com/store/apps/details?id=be.delhaize)
 
-![Screenshot](./Screenshots/delhaize_phone_menu.png)
-![Screenshot](./Screenshots/delhaize_tablet_menu.png)
-![Screenshot](./Screenshots/delhaize_tablet_menu_categories.png)
-![Screenshot](./Screenshots/baltur_phone_menu.png)
-![Screenshot](./Screenshots/baltur_tablet_menu.png)
+![Screenshot](./Screenshots/delhaize_phone_menu.png) ![Screenshot](./Screenshots/delhaize_tablet_menu.png) ![Screenshot](./Screenshots/delhaize_tablet_menu_categories.png)
+![Screenshot](./Screenshots/baltur_phone_menu.png) ![Screenshot](./Screenshots/baltur_tablet_menu.png)
 
 License
 -------
